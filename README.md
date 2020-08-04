@@ -14,9 +14,9 @@ Estamos disponibilizando para você a base do projeto em um ambiente Docker, sen
 
 ### Por que tenho que fazer usando docker?
 
-Conhecer docker não é uma obrigação na descrição da vaga, então porque tenho que fazer o projeto usando o docker? 
+#### Conhecer docker não é uma obrigação na descrição da vaga, então porque tenho que fazer o projeto usando o docker? 
 
-Simplismente uma questão de praticidade para podermos avaliar os teste sem termos dor de cabeça com diferentes ambientes de desenvolvimento, usando Docker temos isso mais padronizado.
+Simplesmente uma questão de praticidade para podermos avaliar os teste sem termos dor de cabeça com diferentes ambientes de desenvolvimento, usando Docker temos isso mais padronizado.
 
 Justamente pelo fato de não ser um requisito estamos disponilizando o projeto configurado para você implementar o desafio, basta rodar poucos comandos.
 
