@@ -8,7 +8,7 @@ services:
       environment:
         - MYSQL_ROOT_PASSWORD=nDLvUCNscWDqDIAY
         - MYSQL_DATABASE=analista_jr
-        - MYSQL_USER=user
+        - MYSQL_USER=root
         - MYSQL_PASSWORD=123456
       volumes:
         - ./docker/mysql/my.cnf:/etc/mysql/conf.d/custom.cnf
