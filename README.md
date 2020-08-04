@@ -16,7 +16,7 @@ Estamos disponibilizando para você a base do projeto em um ambiente Docker, sen
 
 #### Conhecer docker não é uma obrigação na descrição da vaga, então porque tenho que fazer o projeto usando o docker? 
 
-Simplesmente uma questão de praticidade para podermos avaliar os teste sem termos dor de cabeça com diferentes ambientes de desenvolvimento, usando Docker temos isso mais padronizado.
+Simplesmente uma questão de praticidade para podermos avaliar os teste sem termos problemas com diferentes ambientes de desenvolvimento, usando Docker temos isso mais padronizado.
 
 Justamente pelo fato de não ser um requisito estamos disponilizando o projeto configurado para você implementar o desafio, basta rodar poucos comandos.
 
@@ -25,9 +25,10 @@ Justamente pelo fato de não ser um requisito estamos disponilizando o projeto c
 Após baixar o repositório e rodar os comandos necessários para configurar seu projeto laravel, na pasta raiz aonde se encontra o arquivo "docker-compose.yml" você deve rodar os seguintes comandos no seu terminal
 
 Para subir os containers: docker-compose up -d
+
 Para remover os container: docker-compose down
 
-O acesso se dará por: localhost:8888 e phpmyadmin localhost:8050
+O acesso se dará por localhost:8888 e o phpmyadmin por localhost:8050
 
 Use o arquivo .env.local como seu .env
 
@@ -39,9 +40,9 @@ Você está mais próximo de fazer parte da Equipe GRTS. Agora, queremos ver voc
 
 Elaboramos um desafio para você colocar as suas habilidades no desenvolvimento de um sistema em prática.
 
-Are you ready? 
+#### Are you ready? 
 
-O desafio é o seguinte:
+### O desafio é o seguinte:
 
 Uma empresa de distribuição de alimentos precisa de um sistema interno para gerenciar seus clientes e endereços de entrega.
 
@@ -61,6 +62,6 @@ As modelagens não foram propostas nem enviadas junto ao desafio porque queremos
 
 Você deve enviar o link do repositório para o email vagas@grtsdigital.com.br o assunto Desafio Analista de Sistemas Jr - {{$seu_nome}} até o dia 09/08/2020 às 23:59h. 
 
-Let’s go? Show me the code!
+#### Let’s go? Show me the code!
 
-Boa sorte!
+### Boa sorte!
