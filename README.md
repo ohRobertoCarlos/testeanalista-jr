@@ -1,15 +1,6 @@
-## Descrição da Vaga
-
-Vaga Analista de Desenvolvimento de Sistemas Jr
-
-Atuar no desenvolvimento de novas funcionalidades e na manutenção dos sistema da empresa. Atualmente temos dois sistemas desenvolvidos com Laravel + Vue.js, você vai estar em contato direto também com Docker, ElasticSearch e GCP.
-
-Precisamos de alguém com experiência em PHP/Laravel, MySql, HTML, CSS e JavaScript, se tiver experiência com algum framework front-end será muito bom.
-
-Se você já teve alguma experiência ou ao menos algum contato com Docker, ElasticSearch e/ou GCP será um diferencial, não é um requisito você vai ter a oportunidade de aprender na prática com a gente.
-
 ## O Desafio
-Parabéns, Dev!
+
+### Parabéns, Dev!
 
 Você está mais próximo de fazer parte da Equipe GRTS. Agora, queremos ver você metendo a mão na massa!
 
@@ -40,25 +31,3 @@ Você deve enviar o link do repositório para o email vagas@grtsdigital.com.br o
 Let’s go? Show me the code!
 
 Boa sorte!
-
-
-
-
-## Laravel Sponsors
-
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
