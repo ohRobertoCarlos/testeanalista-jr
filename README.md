@@ -1,3 +1,36 @@
+## Descrição da Vaga
+
+Vaga Analista de Desenvolvimento de Sistemas Jr
+
+Atuar no desenvolvimento de novas funcionalidades e na manutenção dos sistema da empresa. Atualmente temos dois sistemas desenvolvidos com Laravel + Vue.js, você vai estar em contato direto também com Docker, ElasticSearch e GCP.
+
+Precisamos de alguém com experiência em PHP/Laravel, MySql, HTML, CSS e JavaScript, se tiver experiência com algum framework front-end será muito bom.
+
+Se você já teve alguma experiência ou ao menos algum contato com Docker, ElasticSearch e/ou GCP será um diferencial, não é um requisito você vai ter a oportunidade de aprender na prática com a gente.
+
+## Atenção
+
+Estamos disponibilizando para você a base do projeto em um ambiente Docker, sendo necessário que você tenha o docker instalado na máquina que for usar para desenvolvimento. 
+
+### Por que tenho que fazer usando docker?
+
+Conhecer docker não é uma obrigação na descrição da vaga, então porque tenho que fazer o projeto usando o docker? 
+
+Simplismente uma questão de praticidade para podermos avaliar os teste sem termos dor de cabeça com diferentes ambientes de desenvolvimento, usando Docker temos isso mais padronizado.
+
+Justamente pelo fato de não ser um requisito estamos disponilizando o projeto configurado para você implementar o desafio, basta rodar poucos comandos.
+
+### Orientação para rodar o projeto
+
+Após baixar o repositório e rodar os comandos necessários para configurar seu projeto laravel, na pasta raiz aonde se encontra o arquivo "docker-compose.yml" você deve rodar os seguintes comandos no seu terminal
+
+Para subir os containers: docker-compose up -d
+Para remover os container: docker-compose down
+
+O acesso se dará por: localhost:8888 e phpmyadmin localhost:8050
+
+Use o arquivo .env.local como seu .env
+
 ## O Desafio
 
 ### Parabéns, Dev!
