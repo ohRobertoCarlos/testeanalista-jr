@@ -6,7 +6,7 @@ Atuar no desenvolvimento de novas funcionalidades e na manutenção dos sistema 
 
 Precisamos de alguém com experiência em PHP/Laravel, MySql, HTML, CSS e JavaScript, se tiver experiência com algum framework front-end será muito bom.
 
-Se você já teve alguma experiência ou ao menos algum contato com Docker, ElasticSearch e/ou GCP será um diferencial, não é um requisito você vai ter a oportunidade de aprender na prática com a gente.
+Se você já teve alguma experiência ou ao menos algum contato com Docker, ElasticSearch e/ou GCP será um diferencial, não é um requisito, você vai ter a oportunidade de aprender na prática com a gente.
 
 ## Atenção
 
@@ -16,7 +16,7 @@ Estamos disponibilizando para você a base do projeto em um ambiente Docker, sen
 
 #### Conhecer docker não é uma obrigação na descrição da vaga, então porque tenho que fazer o projeto usando o docker? 
 
-Simplesmente uma questão de praticidade para podermos avaliar os teste sem termos problemas com diferentes ambientes de desenvolvimento, usando Docker temos isso mais padronizado.
+Simplesmente por uma questão de praticidade para podermos avaliar os teste sem termos problemas com diferentes ambientes de desenvolvimento, usando Docker temos isso mais padronizado.
 
 Justamente pelo fato de não ser um requisito estamos disponilizando o projeto configurado para você implementar o desafio, basta rodar poucos comandos.
 
@@ -26,7 +26,7 @@ Após baixar o repositório e rodar os comandos necessários para configurar seu
 
 Para subir os containers: docker-compose up -d
 
-Para remover os container: docker-compose down
+Para remover os containers: docker-compose down
 
 O acesso se dará por localhost:8888 e o phpmyadmin por localhost:8050
 
