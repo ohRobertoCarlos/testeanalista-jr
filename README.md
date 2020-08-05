@@ -56,7 +56,7 @@ Requisitos
 	
 	Utilizar API ViaCEP (https://viacep.com.br/ ) para preenchimento automático dos campos de endereço ao digital o cep.
 	Utilizar DataTable (https://datatables.net/ ) na listagem para ordenação e busca rápida.
-	O desafio deve ser feito utilizando a linguagem PHP, caso queira pode utilizar Laravel ou outro framework.
+	O desafio deve ser feito utilizando como base este projeto. Leia com atenção as instruções acima.
 
 As modelagens não foram propostas nem enviadas junto ao desafio porque queremos ver a sua solução. Não há certo nem errado, mas queremos enxergar a sua forma de desenvolver. Nos envie a modelagem junto com o desafio(pode colocá-la no repositório do projeto).
 
