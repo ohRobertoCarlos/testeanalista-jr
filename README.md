@@ -58,9 +58,11 @@ Requisitos
 	Utilizar DataTable (https://datatables.net/ ) na listagem para ordenação e busca rápida.
 	O desafio deve ser feito utilizando a linguagem PHP, caso queira pode utilizar Laravel ou outro framework.
 
-As modelagens não foram propostas nem enviadas junto ao desafio porque queremos ver a sua solução. Não há certo nem errado, mas queremos enxergar a sua forma de desenvolver. Nos envie a modelagem junto com o desafio.
+As modelagens não foram propostas nem enviadas junto ao desafio porque queremos ver a sua solução. Não há certo nem errado, mas queremos enxergar a sua forma de desenvolver. Nos envie a modelagem junto com o desafio(pode colocá-la no repositório do projeto).
 
-Você deve enviar o link do repositório para o email vagas@grtsdigital.com.br o assunto Desafio Analista de Sistemas Jr - {{$seu_nome}} até o dia 09/08/2020 às 23:59h. 
+Você deve enviar o link do repositório da sua solução do desafio para o email vagas@grtsdigital.com.br com o assunto Desafio Analista de Desenvolvimento Jr. - {{$seu_nome}} até o dia 09/08/2020 às 23:59h. 
+
+Caso tenha alguma instrução para executarmos o projeto você pode enviar no corpo do email.
 
 #### Let’s go? Show me the code!
 
