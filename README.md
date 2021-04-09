@@ -68,6 +68,8 @@ Requisitos
 
 As modelagens não foram propostas nem enviadas junto ao desafio porque queremos ver a sua solução. Não há certo nem errado, mas queremos enxergar a sua forma de desenvolver. Nos envie a modelagem junto com o desafio(pode colocá-la no repositório do projeto).
 
+Caso não consiga realizar o desafio por completo não deixe de nos enviar o que realizou. Caso tenha alguma dificuldade, algum imprevisto ou alguma dúvida não deixe de entrar em contato.
+
 Você deve enviar o link do repositório da sua solução do desafio para o email vagas@grtsdigital.com.br com o assunto Desafio Analista de Desenvolvimento Jr. - {{$seu_nome}} em até 7 dias após o recebimento do email com o link do projeto. 
 
 Caso tenha alguma instrução para executarmos o projeto você pode enviar no corpo do email.
