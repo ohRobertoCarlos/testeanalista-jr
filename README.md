@@ -68,7 +68,7 @@ Requisitos
 
 As modelagens não foram propostas nem enviadas junto ao desafio porque queremos ver a sua solução. Não há certo nem errado, mas queremos enxergar a sua forma de desenvolver. Nos envie a modelagem junto com o desafio(pode colocá-la no repositório do projeto).
 
-Você deve enviar o link do repositório no email de resposta ao email que foi enviado a você com as instruções do desafio até a data e horario informados no email.
+Você deve enviar o link do repositório no email de resposta ao email que foi enviado a você com as instruções do desafio até 7 dias após o recebimento do email.
 
 Caso tenha alguma instrução para executarmos o projeto você pode enviar no corpo do email.
 
