@@ -24,18 +24,21 @@ Justamente pelo fato de não ser um requisito estamos disponilizando o projeto c
 
 Após baixar o repositório e rodar os comandos necessários para configurar seu projeto laravel, na pasta raiz aonde se encontra o arquivo "docker-compose.yml" você deve rodar os seguintes comandos no seu terminal
 
-Para subir os containers: docker-compose up -d
+**Para subir os containers:** docker-compose up -d
 
-Para remover os containers: docker-compose down
+**Para remover os containers:** docker-compose down
 
 O acesso se dará por localhost:8888 e o phpmyadmin por localhost:8050
 
 Use o arquivo .env.local como seu .env
 
-Algumas outras observações sobre o ambiente Docker. Para rodar comandos artisan que se conectam ao banco de dados como comandos de migrate ou de seed por ex, o meso=mo precisa ser execudato de dentro do container. Você deve rodar os comandos com docker exec -it phplocal-php na frente:
+**Algumas outras observações sobre o ambiente Docker** 
 
-Ex1: docker exec -it phplocal-php php artisan migrate
-Ex2: docker exec -it phplocal-php php artisan migrate
+Para rodar comandos artisan que se conectam ao banco de dados como comandos de **migrate** ou de **seed** por ex, o mesmo precisa ser execudato de dentro do container. Você deve rodar os comandos com **docker exec -it phplocal-php** na frente:
+
+**Ex1: docker exec -it phplocal-php php artisan migrate
+
+**Ex2: docker exec -it phplocal-php php artisan migrate
 
 ## O Desafio
 
