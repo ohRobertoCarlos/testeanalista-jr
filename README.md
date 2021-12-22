@@ -36,9 +36,9 @@ Use o arquivo .env.local como seu .env
 
 Para rodar comandos artisan que se conectam ao banco de dados como comandos de **migrate** ou de **seed** por ex, o mesmo precisa ser execudato de dentro do container. Você deve rodar os comandos com **docker exec -it phplocal-php** na frente:
 
-**Ex1: docker exec -it phplocal-php php artisan migrate
+**Ex1: docker exec -it analistaJr-php php artisan migrate**
 
-**Ex2: docker exec -it phplocal-php php artisan migrate
+**Ex2: docker exec -it analistaJr-php php artisan migrate**
 
 ## O Desafio
 
