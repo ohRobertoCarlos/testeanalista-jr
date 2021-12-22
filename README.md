@@ -32,6 +32,11 @@ O acesso se dará por localhost:8888 e o phpmyadmin por localhost:8050
 
 Use o arquivo .env.local como seu .env
 
+Algumas outras observações sobre o ambiente Docker. Para rodar comandos artisan que se conectam ao banco de dados como comandos de migrate ou de seed por ex, o meso=mo precisa ser execudato de dentro do container. Você deve rodar os comandos com docker exec -it phplocal-php na frente:
+
+Ex1: docker exec -it phplocal-php php artisan migrate
+Ex2: docker exec -it phplocal-php php artisan migrate
+
 ## O Desafio
 
 ### Parabéns, Dev!
