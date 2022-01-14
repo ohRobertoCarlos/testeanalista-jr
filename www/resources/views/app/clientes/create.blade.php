@@ -28,22 +28,28 @@
             <input id="email" value="{{old('email') ?? ''}}" name="email" class="form-control m-1" type="email" required="required">
             <p class="text-danger">{{ $errors->has('email') ? $errors->first('email') : '' }}</p>
 
-            <h2 class="my-4">Endereço(s):</h2>
+            <h2 class="my-4">Endereço:</h2>
 
             <label class="form-label" for="email">CEP</label>
-            <input id="cep" value="{{old('cep') ?? ''}}" name="cep" class="form-control m-1" type="text" placeholder="Digite um CEP válido para preencher o endereço automaticamente" required="required">
+            <input id="cep" name="cep" class="form-control m-1" type="text" placeholder="Digite um CEP válido para preencher o endereço automaticamente" required="required">
             <p class="text-danger">{{ $errors->has('cep') ? $errors->first('cep') : '' }}</p>
 
+            <label class="form-label" for="logradouro">Logradouro</label>
             <input id="logradouro" name="logradouro" class="form-control m-1" type="text" required="required">
 
+            <label class="form-label" for="bairro">Bairro</label>
             <input id="bairro" name="bairro" class="form-control m-1" type="text" required="required">
 
+            <label class="form-label" for="complemento">Complemento</label>
             <input id="complemento" name="complemento" class="form-control m-1" type="text" required="required">
 
+            <label class="form-label" for="numero">Número</label>
             <input id="numero" name="numero" class="form-control m-1" type="text" required="required">
 
+            <label class="form-label" for="cidade">Cidade</label>
             <input id="cidade" name="cidade" class="form-control m-1" type="text" required="required">
 
+            <label class="form-label" for="estado">Estado</label>
             <input id="estado" name="estado" class="form-control m-1" type="text" required="required">
 
             <button class="btn btn-primary my-3" type="submit">Cadastrar</button>

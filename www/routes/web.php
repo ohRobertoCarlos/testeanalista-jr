@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\EnderecoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,12 @@ Route::middleware('auth')->group(function () {
 
     Route::delete('/clientes/delete/{id}', [ClienteController::class, 'destroy'])
         ->name('clientes.destroy');
+
+     Route::get('/enderecos/show/{id}', [EnderecoController::class, 'show'])
+        ->name('endereco.show');
+
+    Route::delete('/enderecos/delete/{id}', [EnderecoController::class, 'destroy'])
+        ->name('endereco.destroy');
 
 
     Route::get('/admin', function () {

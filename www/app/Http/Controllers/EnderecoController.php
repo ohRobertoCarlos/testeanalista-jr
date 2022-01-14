@@ -44,9 +44,10 @@ class EnderecoController extends Controller
      * @param  \App\Endereco  $endereco
      * @return \Illuminate\Http\Response
      */
-    public function show(Endereco $endereco)
+    public function show($id)
     {
-        //
+        $endereco = Endereco::find($id);
+        return view('app.endereco.show', ['endereco' => $endereco]);
     }
 
     /**
@@ -78,8 +79,10 @@ class EnderecoController extends Controller
      * @param  \App\Endereco  $endereco
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Endereco $endereco)
+    public function destroy($id)
     {
-        //
+        Endereco::findOrFail($id)->delete();
+
+        return redirect()->route('clientes.index');
     }
 }

@@ -13,34 +13,19 @@ class CreateAllTables extends Migration
      */
     public function up()
     {
-
-        Schema::create('estados', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nome');
-            $table->timestamps();
-        });
-
-        Schema::create('cidades', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nome');
-            $table->unsignedBigInteger('estado_id');
-            $table->timestamps();
-
-            $table->foreign('estado_id')->references('id')->on('estados');
-        });
-
         Schema::create('enderecos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('cep');
-            $table->string('logradouro');
-            $table->string('bairro');
-            $table->string('complemento');
-            $table->integer('numero');
-            $table->unsignedBigInteger('cidade_id');
+            $table->string('logradouro')->nullable();
+            $table->string('bairro')->nullable();
+            $table->string('complemento')->nullable();
+            $table->integer('numero')->nullable();
+            $table->string('cidade');
+            $table->boolean('principal')->default(false);
+            $table->string('estado');
             $table->unsignedBigInteger('cliente_id');
             $table->timestamps();
 
-            $table->foreign('cidade_id')->references('id')->on('cidades');
             $table->foreign('cliente_id')->references('id')->on('clientes');
         });
 
@@ -80,15 +65,8 @@ class CreateAllTables extends Migration
         Schema::dropIfExists('permissoes');
 
         Schema::table('enderecos', function (Blueprint $table){
-            $table->dropForeign('enderecos_cidade_id_foreign');
             $table->dropForeign('enderecos_cliente_id_foreign');
         });
         Schema::dropIfExists('enderecos');
-
-        Schema::table('cidades', function (Blueprint $table){
-            $table->dropForeign('cidades_estado_id_foreign');
-        });
-        Schema::dropIfExists('cidades');
-        Schema::dropIfExists('estados');
     }
 }

@@ -23,4 +23,5 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="http://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/datatable.js') }}" ></script>
+    <script src="{{ asset('js/scripts.js') }}"></script>
 </html>

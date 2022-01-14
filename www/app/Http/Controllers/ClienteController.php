@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Cliente;
+use App\Endereco;
+use App\Repositories\EnderecoRepositories;
+use App\Repositories\EnderecoRepository;
 use Illuminate\Http\Request;
 
 class ClienteController extends Controller
@@ -43,9 +46,22 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate($this->model->rules(),$this->model->params());
 
-        Cliente::create($request->all());
+        $cliente = Cliente::create($request->all());
+
+        Endereco::create([
+            'logradouro' => $request->logradouro,
+            'bairro' => $request->bairro,
+            'cidade' => $request->cidade,
+            'complemento' => $request->complemento,
+            'cep' => $request->cep,
+            'numero' => $request->numero,
+            'estado' => $request->estado,
+            'numero' => $request->numero,
+            'cliente_id' => $cliente->id,
+        ]);
 
         return redirect()->route('clientes.index');
     }
@@ -82,9 +98,11 @@ class ClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $cliente = Cliente::findOrFail($id);
+
+        (new EnderecoRepository)->atualizarEndereco($request, $cliente);
         $request->validate($this->model->rules(),$this->model->params());
 
-        $cliente = Cliente::findOrFail($id);
         $cliente->update($request->all());
 
         return redirect()->route('clientes.index');

@@ -37270,6 +37270,12 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var cep = document.querySelector('#cep');
+
+cep.onKeyPress = function (e) {
+  console.log(e.target.value);
+};
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

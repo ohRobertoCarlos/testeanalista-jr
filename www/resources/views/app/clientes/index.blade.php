@@ -7,7 +7,6 @@
 <div class="container">
 
    <a href="{{ route('clientes.create') }}" class="btn btn-success m-3">Cadastrar Cliente</a>
-
    <hr>
 
    <h2 class="mb-4">Clientes:</h2>
@@ -20,6 +19,7 @@
                 <th>Telefone</th>
                 <th>Nome do responsável</th>
                 <th>Email</th>
+                <th>Endereço(s)</th>
                 <th>#</th>
                 <th>#</th>
             </tr>
@@ -38,6 +38,7 @@
                     <td>{{ $cliente->telefone }}</td>
                     <td>{{ $cliente->nome_responsavel }}</td>
                     <td>{{ $cliente->email }}</td>
+                    <td><a class="btn btn-warning" href="#">Visualizar</a></td>
                     <td><a class="btn btn-primary" href="{{ route('clientes.edit',['id' => $cliente->id]) }}">editar</a></td>
                     <td>
                         <form method="POST" action="{{ route('clientes.destroy', ['id' => $cliente->id]) }}">
