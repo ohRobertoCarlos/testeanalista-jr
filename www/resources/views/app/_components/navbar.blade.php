@@ -3,8 +3,7 @@
                 @guest
 
                 @else
-                    <a class="btn btn-primary mr-3" href="{{ route('clientes.index') }}">Clientes</a>
-                    <a class="btn btn-primary mr-3" href="{{ route('admin') }}">Área administrativa</a>
+
                 @endguest
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
@@ -26,14 +25,9 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item ">
-                                <a class="nav-link" id="name-user-logged" href="#">
-                                    {{ Auth::user()->name }}
-                                </a>
-                            </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <a class="btn btn-warning" href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
@@ -42,6 +36,21 @@
                                     @csrf
                                 </form>
                             </li>
+
+                            <li class="nav-item mx-4">
+                                <a class="nav-link" id="name-user-logged" href="#">
+                                    {{ Auth::user()->name }}
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="btn btn-primary mr-3" href="{{ route('clientes.index') }}">Clientes</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="btn btn-primary mr-3" href="{{ route('admin') }}">Área administrativa</a>
+                            </li>
+
                         @endguest
                     </ul>
                 </div>
