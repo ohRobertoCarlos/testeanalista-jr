@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 use App\Endereco;
+use App\Http\Middleware\PermissaoAdmin;
 use App\Repositories\EnderecoRepositories;
 use App\Repositories\EnderecoRepository;
 use Illuminate\Http\Request;

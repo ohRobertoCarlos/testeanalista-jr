@@ -37,10 +37,18 @@ class EnderecoRepository
     {
         $request->validate($this->model->rules(),$this->model->params());
 
-        $antigoPrincipal = current(Endereco::where('principal','1')->get());
-        if(count($antigoPrincipal) > 0) {
-            current($antigoPrincipal)->update(['principal' => '0']);
+        // dd(current());
+
+        foreach (current($cliente->enderecos) as $endereco) {
+            if ($endereco->principal == 1) {
+                $endereco->update(['principal' => '0']);
+            }
         }
+
+        // $antigoPrincipal = current(Endereco::where('principal','1')->get());
+        // if(count($antigoPrincipal) > 0) {
+        //     current($antigoPrincipal)->update(['principal' => '0']);
+        // }
 
         if(isset($request->principal)){
             Endereco::findOrFail($request->principal)->update(['principal' => 1]);

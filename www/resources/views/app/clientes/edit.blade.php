@@ -51,7 +51,6 @@
                                 <th>Estado</th>
                                 <th>Número</th>
                                 <th>#</th>
-                                <th>#</th>
                             </tr>
                         <tbody>
 
@@ -75,7 +74,6 @@
                                 <td>{{ $endereco->complemento }}</td>
                                 <td>{{ $endereco->estado }}</td>
                                 <td>{{ $endereco->numero }}</td>
-                                <td><a class="btn btn-primary" href="#">Editar</a></td>
                                 <td>
                                     <a class="btn btn-warning" href="{{ route('endereco.show', ['id' => $endereco->id]) }}">Ver</a></td>
                                 </td>

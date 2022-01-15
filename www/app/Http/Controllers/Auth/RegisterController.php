@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\PermissaoAdmin;
+use App\Perfis\Perfil;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -32,13 +34,25 @@ class RegisterController extends Controller
     protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+    //  */
+    public function showRegistrationForm()
+    {
+        $perfis = Perfil::PERFIS;
+        return view('auth.register', ['perfis' => $perfis]);
+    }
+
+    /**
      * Create a new controller instance.
      *
      * @return void
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
+        $this->middleware(PermissaoAdmin::class);
     }
 
     /**
@@ -68,6 +82,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'perfil' => $data['perfil'],
         ]);
     }
 }

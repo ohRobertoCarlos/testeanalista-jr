@@ -1,6 +1,6 @@
 @extends('app.layouts.main')
 
-@section('title', 'Admin')
+@section('title', 'Clientes')
 
 @section('content')
 
@@ -19,9 +19,9 @@
                 <th>Telefone</th>
                 <th>Nome do responsável</th>
                 <th>Email</th>
-                <th>Endereço(s)</th>
                 <th>#</th>
                 <th>#</th>
+                <th>Endereço Principal</th>
             </tr>
         </thead>
         <tbody>
@@ -38,7 +38,6 @@
                     <td>{{ $cliente->telefone }}</td>
                     <td>{{ $cliente->nome_responsavel }}</td>
                     <td>{{ $cliente->email }}</td>
-                    <td><a class="btn btn-warning" href="#">Visualizar</a></td>
                     <td><a class="btn btn-primary" href="{{ route('clientes.edit',['id' => $cliente->id]) }}">editar</a></td>
                     <td>
                         <form method="POST" action="{{ route('clientes.destroy', ['id' => $cliente->id]) }}">
@@ -47,6 +46,12 @@
                             <button type="submit" class="btn btn-danger" >Excluir</button>
                         </form>
                     </td>
+
+                    @foreach ($cliente->enderecos as $endereco)
+                        @if($endereco->principal == 1)
+                            <td>{{ $endereco->cep }}, {{ $endereco->cidade }} - {{ $endereco->estado }}</td>
+                        @endif
+                    @endforeach
                 </tr>
             @endforeach
         </tbody>

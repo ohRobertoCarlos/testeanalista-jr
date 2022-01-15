@@ -56,9 +56,11 @@ class EnderecoController extends Controller
      * @param  \App\Endereco  $endereco
      * @return \Illuminate\Http\Response
      */
-    public function edit(Endereco $endereco)
+    public function edit($id)
     {
-        //
+        $endereco = Endereco::find($id);
+
+        return view('app.endereco.edit', ['endereco' => $endereco]);
     }
 
     /**
@@ -68,9 +70,11 @@ class EnderecoController extends Controller
      * @param  \App\Endereco  $endereco
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Endereco $endereco)
+    public function update(Request $request, $id)
     {
-        //
+        $endereco = Endereco::find($id);
+
+        $endereco->update($request->all());
     }
 
     /**

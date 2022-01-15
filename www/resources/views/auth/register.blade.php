@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Registrar') }}</div>
+                <div class="card-header">{{ __('Criar Usuário') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -61,10 +61,33 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group row">
+                            <label for="perfil" class="col-md-4 col-form-label text-md-right">{{ __('Perfil') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="custom-select" name="perfil" id="perfil">
+                                    <option>Selecione um Perfil</option>
+
+                                    @foreach ($perfis as $nomePerfil => $perfil)
+                                        <option value="{{ $perfil }}">{{ucfirst($nomePerfil)}}</option>
+                                    @endforeach
+
+                                </select>
+
+                                @error('perfil')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Registrar') }}
+                                    {{ __('Criar') }}
                                 </button>
                             </div>
                         </div>

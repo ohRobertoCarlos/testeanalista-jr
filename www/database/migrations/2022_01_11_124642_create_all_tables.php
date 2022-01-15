@@ -26,26 +26,26 @@ class CreateAllTables extends Migration
             $table->unsignedBigInteger('cliente_id');
             $table->timestamps();
 
-            $table->foreign('cliente_id')->references('id')->on('clientes');
+            $table->foreign('cliente_id')->references('id')->on('clientes')->onDelete('cascade');
         });
 
-        Schema::create('permissoes', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nome');
-            $table->text('descricao');
-            $table->timestamps();
-        });
+        // Schema::create('permissoes', function (Blueprint $table) {
+        //     $table->bigIncrements('id');
+        //     $table->string('nome');
+        //     $table->text('descricao');
+        //     $table->timestamps();
+        // });
 
-        Schema::create('perfis', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nome');
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('permissao_id');
-            $table->timestamps();
+        // Schema::create('perfis', function (Blueprint $table) {
+        //     $table->bigIncrements('id');
+        //     $table->string('nome');
+        //     $table->unsignedBigInteger('user_id');
+        //     $table->unsignedBigInteger('permissao_id');
+        //     $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('permissao_id')->references('id')->on('permissoes')->onDelete('cascade');
-        });
+        //     $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        //     $table->foreign('permissao_id')->references('id')->on('permissoes')->onDelete('cascade');
+        // });
 
     }
 
@@ -56,13 +56,13 @@ class CreateAllTables extends Migration
      */
     public function down()
     {
-        Schema::table('perfis', function (Blueprint $table){
-            $table->dropForeign('perfis_permissao_id_foreign');
-            $table->dropForeign('perfis_user_id_foreign');
-        });
+        // Schema::table('perfis', function (Blueprint $table){
+        //     $table->dropForeign('perfis_permissao_id_foreign');
+        //     $table->dropForeign('perfis_user_id_foreign');
+        // });
 
-        Schema::dropIfExists('perfis');
-        Schema::dropIfExists('permissoes');
+        // Schema::dropIfExists('perfis');
+        // Schema::dropIfExists('permissoes');
 
         Schema::table('enderecos', function (Blueprint $table){
             $table->dropForeign('enderecos_cliente_id_foreign');
