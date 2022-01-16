@@ -20,10 +20,29 @@ class AdminController extends Controller
      *
      * @return void
      */
-    public function register()
+    public function create()
     {
         $perfis = Perfil::PERFIS;
+
         return view('auth.register', ['perfis' => $perfis]);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|min:2',
+            'password' => 'required|confirmed',
+            'email' => 'required|email',
+            'perfil' => 'required'
+        ],[
+            'name.min' => 'O nome tem no mínimo 2 caracteres',
+            'required' => 'O campo :attribute é requerido',
+            'password.confirmed' => 'Confime a senha para continuar'
+        ]);
+
+        User::create($request->all());
+
+        return redirect()->route('admin');
     }
 
     public function edit(Request $request, $id)

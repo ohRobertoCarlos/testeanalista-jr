@@ -85,26 +85,26 @@
                 <h3 class="my-4">Criar Novo Endereço: (OPCIONAl)</h3>
 
                 <label class="form-label" for="email">CEP</label>
-                <input id="cep" name="cep" class="form-control m-1" type="text" placeholder="Digite um CEP válido para preencher o endereço automaticamente">
+                <input id="cep" value="{{old('cep')}}" name="cep" class="form-control m-1" type="text" placeholder="Digite um CEP válido para preencher o endereço automaticamente">
                 <p class="text-danger">{{ $errors->has('cep') ? $errors->first('cep') : '' }}</p>
 
                 <label class="form-label" for="logradouro">Logradouro</label>
-                <input id="logradouro" name="logradouro" class="form-control m-1" type="text">
+                <input id="logradouro" value="{{old('logradouro')}}" name="logradouro" class="form-control m-1" type="text">
 
                 <label class="form-label" for="bairro">Bairro</label>
-                <input id="bairro" name="bairro" class="form-control m-1" type="text">
+                <input id="bairro" value="{{old('bairro')}}" name="bairro" class="form-control m-1" type="text">
 
                 <label class="form-label" for="complemento">Complemento</label>
-                <input id="complemento" name="complemento" class="form-control m-1" type="text">
+                <input id="complemento" value="{{old('complemento')}}" name="complemento" class="form-control m-1" type="text">
 
                 <label class="form-label" for="numero">Número</label>
-                <input id="numero" name="numero" class="form-control m-1" type="text">
+                <input id="numero" value="{{old('numero')}}" name="numero" class="form-control m-1" type="text">
 
                 <label class="form-label" for="cidade">Cidade</label>
-                <input id="cidade" name="cidade" class="form-control m-1" type="text">
+                <input id="cidade" value="{{old('cidade')}}" name="cidade" class="form-control m-1" type="text">
 
                 <label class="form-label" for="estado">Estado</label>
-                <input id="estado" name="estado" class="form-control m-1" type="text">
+                <input id="estado" value="{{old('estado')}}" name="estado" class="form-control m-1" type="text">
 
                 <button class="btn btn-primary mt-3" type="submit">Salvar</button>
             </form>

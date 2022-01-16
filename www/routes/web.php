@@ -37,7 +37,8 @@ Route::middleware('auth')->group(function () {
     });
         // Perfil ADMIN
         Route::middleware(PermissaoAdmin::class)->group(function () {
-            Route::get('/admin/register',[AdminController::class, 'register'])->name('admin.register');
+            Route::get('/admin/create',[AdminController::class, 'create'])->name('admin.create');
+            Route::post('/admin/store',[AdminController::class, 'store'])->name('admin.store');
             Route::get('/admin',[AdminController::class, 'index'])->name('admin');
             Route::get('/admin/user/edit/{id}',[ AdminController::class, 'edit'])->name('admin.edit');
             Route::put('/admin/user/update/{id}',[ AdminController::class, 'update'])->name('admin.update');

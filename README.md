@@ -1,87 +1,64 @@
-## Descrição da Vaga
+# Requisitos para executar o projeto
 
-Vaga Analista de Desenvolvimento de Sistemas Jr
+* Git
+* Docker
+* Docker compose
 
-Atuar no desenvolvimento de novas funcionalidades e na manutenção dos sistema da empresa. Atualmente temos dois sistemas desenvolvidos com Laravel + Vue.js, você vai estar em contato direto também com Docker, ElasticSearch e GCP.
+# Passo a Passo para rodar o projeto
 
-Precisamos de alguém com conhecimento em PHP/Laravel, MySql, HTML, CSS e JavaScript, se tiver experiência com algum framework front-end será muito bom.
+1. Clone o repositório.
 
-Se você já teve alguma experiência ou ao menos algum contato com Docker, ElasticSearch e/ou GCP será um diferencial, não é um requisito, você vai ter a oportunidade de aprender na prática com a gente.
+Via SSH:
 
-## Atenção
+~~~shell
+    git clone git@github.com:ohRobertoCarlos/testeanalista-jr.git
+~~~
 
-Estamos disponibilizando para você a base do projeto em um ambiente Docker, sendo necessário que você tenha o docker instalado na máquina que for usar para desenvolvimento. 
+Via Https:
 
-### Por que tenho que fazer usando docker?
+~~~shell
+    git clone https://github.com/ohRobertoCarlos/testeanalista-jr.git
+~~~
 
-#### Conhecer docker não é uma obrigação na descrição da vaga, então porque tenho que fazer o projeto usando o docker? 
+2. Entre na pasta testeanalista-jr:
+~~~shell
+    cd testeanalista-jr/
+~~~
 
-Simplesmente por uma questão de praticidade para podermos avaliar os teste sem termos problemas com diferentes ambientes de desenvolvimento, usando Docker temos isso mais padronizado.
+3. Crie um arquivo de configuração com o nome **.env** dentro da pasta **www/**, e depos copie o conteudo do arquivo **.env.local** (na pasta www/) para o **.env**.
 
-Justamente pelo fato de não ser um requisito estamos disponilizando o projeto configurado para você implementar o desafio, basta rodar poucos comandos.
+4. Volte para a pasta raiz do projeto (onde está o arquivo **docker-compose.yml**) e execute o comando abaixo para baixar as imagens e inicializar os conteiners:
 
-### Orientação para rodar o projeto
+~~~shell
+    docker-compose up -d
+~~~
 
-Após baixar o repositório e rodar os comandos necessários para configurar seu projeto laravel, na pasta raiz aonde se encontra o arquivo "docker-compose.yml" você deve rodar os seguintes comandos no seu terminal
+5. Depois execute o camando abaixo para instalar as dependências do projeto:
 
-**Para subir os containers:** docker-compose up -d
+~~~shell
+    docker-compose exec php-fpm composer install --no-dev
+~~~
 
-**Para remover os containers:** docker-compose down
+6. Depois de os conteiners estarem de pé, execute o camando abaixo para dar permissao aos conteiners para manipular os arquivos da pasta **www/**.
 
-O acesso se dará por localhost:8888 e o phpmyadmin por localhost:8050
+~~~shell
+    sudo chmod -R 777 www/
+~~~
+7. Para rodar as migrations execute o comando abaixo:
 
-Use o arquivo .env.local como seu .env
+~~~shell
+    docker-compose exec php-fpm php artisan migrate
+~~~
 
-**Algumas outras observações sobre o ambiente Docker** 
+8. Se ocorrer algum erro de conexão recusada (Connection refused), o banco de dados Mysql não inicializou ainda. Caso seja a primeira vez que esse container inicializa, ele pode demorar, peço para aguardar um pouco e executar o comando anterior novamente. Se o erro persistir aguarde mais um pouco e tente novamente. É possível ver se o Mysql está pronto para conexões vendo os logs do container.
 
-Para rodar comandos artisan que se conectam ao banco de dados como comandos de **migrate** ou de **seed** por ex, o mesmo precisa ser execudato de dentro do container. Você deve rodar os comandos com **docker exec -it phplocal-php** na frente:
+8. Em seguida é preciso semear o banco de dados, execute o camando abaixo:
 
-**Ex1: docker exec -it analistaJr-php php artisan migrate**
+~~~shell
+    docker-compose exec php-fpm php artisan db:seed --class=AdminSeeder
+~~~
 
-**Ex2: docker exec -it analistaJr-php php artisan migrate**
+9. O último comando, basicamente, foi para fazer um insert de um usuário com permissões de administrador no banco. Acesse o endereço http://localhost:8888 para acessar a aplicação, use as credenciais abaixo para fazer login:
 
-## O Desafio
-
-### Parabéns, Dev!
-
-Você está mais próximo de fazer parte da Equipe GRTS. Agora, queremos ver você metendo a mão na massa!
-
-Elaboramos um desafio para você colocar as suas habilidades no desenvolvimento de um sistema em prática.
-
-#### Are you ready? 
-
-### O desafio é o seguinte:
-
-Uma empresa de distribuição de alimentos precisa de um sistema interno para gerenciar seus clientes e endereços de entrega.
-
-O cadastro será interno e deve ser restrito a usuários logados com login e senha. O cadastro do cliente deve conter Nome Empresa, CNPJ, Telefone, Nome do Responsável, Email e Endereço(Cep, Logradouro, Bairro, Complemento, Número, Cidade, Estado).
-
-Os usuários podem ter um de três perfis: Admin, Editor e Visualizador
-
-Admin: Pode realizar qualquer ação no sistema.
-
-Editor: Pode Criar, Editar, Excluir e Visualizar endereços e clientes.
-
-Visualizador: Visualizar endereços e clientes
-
-Quanto ao Endereço podem ser cadastrados mais de um endereço para cada cliente devendo ser selecionado UM endereço como principal, a definição do endereço principal pode ser alterada a qualquer momento.
-
-O sistema deve permitir Listagem, Criação, Edição, Exclusão e Visualização do Cliente e de seus endereços.
-
-Requisitos
-	
-	Utilizar API ViaCEP (https://viacep.com.br/ ) para preenchimento automático dos campos de endereço ao digital o cep.
-	Utilizar DataTable (https://datatables.net/ ) na listagem para ordenação e busca rápida.
-	O desafio deve ser feito utilizando como base este projeto. Leia com atenção as instruções acima.
-
-As modelagens não foram propostas nem enviadas junto ao desafio porque queremos ver a sua solução. Não há certo nem errado, mas queremos enxergar a sua forma de desenvolver. Nos envie a modelagem junto com o desafio(pode colocá-la no repositório do projeto).
-
-Caso não consiga realizar o desafio por completo não deixe de nos enviar o que realizou. Caso tenha alguma dificuldade, algum imprevisto ou alguma dúvida não deixe de entrar em contato.
-
-Você deve enviar o link do repositório da sua solução do desafio para o email victor@grtsdigital.com.br com o assunto Desafio Analista de Desenvolvimento Jr. - {{$seu_nome}} em até 7 dias após o recebimento do email com o link do projeto. 
-
-Caso tenha alguma instrução específica para executarmos o projeto você pode enviar no corpo do email.
-
-#### Let’s go? Show me the code!
-
-### Boa sorte!
+    Email: admin@email.com
+    senha: 1234

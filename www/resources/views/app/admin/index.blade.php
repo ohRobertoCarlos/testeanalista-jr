@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container">
-        <a href="{{ route('admin.register') }}" class="btn btn-success m-4">
+        <a href="{{ route('admin.create') }}" class="btn btn-success m-4">
             Criar Usuario
         </a>
 
