@@ -33,11 +33,12 @@ class AdminController extends Controller
             'name' => 'required|min:2',
             'password' => 'required|confirmed',
             'email' => 'required|email',
-            'perfil' => 'required'
+            'perfil' => 'required|integer'
         ],[
             'name.min' => 'O nome tem no mínimo 2 caracteres',
             'required' => 'O campo :attribute é requerido',
-            'password.confirmed' => 'Confime a senha para continuar'
+            'password.confirmed' => 'Confime a senha para continuar',
+            'perfil.integer' => 'selecione um perfil para o usuário',
         ]);
 
         User::create($request->all());

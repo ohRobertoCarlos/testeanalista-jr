@@ -76,12 +76,7 @@
                                     @endforeach
 
                                 </select>
-
-                                @error('perfil')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <p class="text-danger">{{ $errors->has('perfil') ? $errors->first('perfil') : '' }}</p>
                             </div>
                         </div>
 
