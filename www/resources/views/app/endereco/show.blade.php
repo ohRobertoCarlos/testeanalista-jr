@@ -7,7 +7,7 @@
     <div class="container">
         <div>
             <p>Cep: <span class="font-weight-bold" >{{$endereco->cep}}</span></p>
-            <p>Logradouro: <span class="font-weight-bold" >{{$endereco->Logradouro}}</span></p>
+            <p>Logradouro: <span class="font-weight-bold" >{{$endereco->logradouro}}</span></p>
             <p>Bairro: <span class="font-weight-bold" >{{$endereco->bairro}}</span></p>
             <p>cidade: <span class="font-weight-bold" >{{$endereco->cidade}}</span></p>
             <p>Estado: <span class="font-weight-bold" >{{$endereco->estado}}</span></p>

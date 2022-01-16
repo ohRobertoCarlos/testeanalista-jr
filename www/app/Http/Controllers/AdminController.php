@@ -15,6 +15,17 @@ class AdminController extends Controller
         return view('app.admin.index', ['users' => $users]);
     }
 
+    /**
+     * Devolver view para criar Usuário
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $perfis = Perfil::PERFIS;
+        return view('auth.register', ['perfis' => $perfis]);
+    }
+
     public function edit(Request $request, $id)
     {
         $user = User::find($id);
@@ -37,11 +48,15 @@ class AdminController extends Controller
         }
 
         $user->update($dados);
+
+        return redirect()->route('admin');
     }
 
-    public function register()
+    public function destroy($id)
     {
-        $perfis = Perfil::PERFIS;
-        return view('auth.register', ['perfis' => $perfis]);
+        User::find($id)->delete();
+
+        return redirect()->route('admin');
     }
+
 }

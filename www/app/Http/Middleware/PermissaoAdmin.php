@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Perfis\Perfil;
 use Closure;
 use Exception;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,7 @@ class PermissaoAdmin
     {
         $perfil = auth()->user()->perfil;
 
-        if (intval($perfil) != 1) {
+        if (intval($perfil) != Perfil::PERFIS['admin']) {
             return redirect()->route('clientes.index');
         }
 

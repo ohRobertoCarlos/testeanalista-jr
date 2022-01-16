@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Cliente;
 use App\Endereco;
 use Illuminate\Http\Request;
 
@@ -33,11 +34,9 @@ class EnderecoRepository
 
     }
 
-    public function atualizarEndereco(Request $request, $cliente)
+    public function removerAntigoPrincipal($idCliente)
     {
-        $request->validate($this->model->rules(),$this->model->params());
-
-        // dd(current());
+        $cliente = Cliente::find($idCliente);
 
         foreach (current($cliente->enderecos) as $endereco) {
             if ($endereco->principal == 1) {
@@ -45,19 +44,25 @@ class EnderecoRepository
             }
         }
 
-        // $antigoPrincipal = current(Endereco::where('principal','1')->get());
-        // if(count($antigoPrincipal) > 0) {
-        //     current($antigoPrincipal)->update(['principal' => '0']);
-        // }
+        return true;
+    }
 
+    public function atualizarEndereco(Request $request, $cliente)
+    {
+        $request->validate($this->model->rules(),$this->model->params());
+
+        $this->removerAntigoPrincipal($cliente->id);
+
+        // Adiciona novo endereço principal
         if(isset($request->principal)){
             Endereco::findOrFail($request->principal)->update(['principal' => 1]);
         }
 
-
         if ($request->cidade != null && $request->estado != null) {
             $this->create($request,$cliente);
         }
+
+        return true;
     }
 
 

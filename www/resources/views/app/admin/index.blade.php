@@ -25,12 +25,29 @@
                     <tr>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
-                        <td>{{$user->perfil}}</td>
+                        <td>
+                            @switch($user->perfil)
+                                @case(1)
+                                    Administrador
+                                    @break
+                                @case(2)
+                                    Editor
+                                    @break
+                                @case(3)
+                                    Visualizador
+                                    @break
+                            @endswitch
+                        </td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('admin.edit', ['id' => $user->id]) }}">Editar</a>
                         </td>
                         <td>
-                            <a class="btn btn-danger" href="#">Excluir</a>
+                            <form method="POST" action="{{ route('admin.destroy', ['id' => $user->id]) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Excluir</button>
+                            </form>
+
                         </td>
                     </tr>
                 @endforeach

@@ -30,14 +30,14 @@ class Endereco extends Model
     public function rules()
     {
         return [
-            // 'principal' => 'required',
+            //
         ];
     }
 
     public function params()
     {
         return [
-            'required' => 'O campo :attribute é requerido'
+            //
         ];
     }
 }

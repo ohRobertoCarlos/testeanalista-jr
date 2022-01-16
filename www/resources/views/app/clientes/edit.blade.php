@@ -4,9 +4,7 @@
 
 @section('content')
     <div class="container mt-5 col-8">
-
-        <a class="btn btn-success" href="#">Adicionar Endereço</a>
-        <hr>
+        <h2>Dados do cliente:</h2>
 
         <div class="mb-5">
             <form action="{{ route('clientes.update', ['id' => $cliente->id]) }}" method="POST">
@@ -38,10 +36,8 @@
                 <h2 class="my-4">Endereço(s) do Cliente</h2>
                     <table id="table">
                         <thead>
-
-                        </thead>
                             <tr>
-                                <th>Endereço Principal</th>
+                                <th>Endereço Principal (Check)</th>
                                 <th>ID</th>
                                 <th>CEP</th>
                                 <th>Cidade</th>
@@ -52,6 +48,7 @@
                                 <th>Número</th>
                                 <th>#</th>
                             </tr>
+                        </thead>
                         <tbody>
 
                             @if (count($cliente->enderecos) == 0)
@@ -85,7 +82,7 @@
 
                     <hr>
 
-                <h3 class="my-4">Criar Novo Endereço:</h3>
+                <h3 class="my-4">Criar Novo Endereço: (OPCIONAl)</h3>
 
                 <label class="form-label" for="email">CEP</label>
                 <input id="cep" name="cep" class="form-control m-1" type="text" placeholder="Digite um CEP válido para preencher o endereço automaticamente">

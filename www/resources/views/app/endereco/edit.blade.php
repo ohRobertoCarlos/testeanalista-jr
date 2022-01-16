@@ -32,6 +32,20 @@
                 <label class="form-label" for="estado">Estado</label>
                 <input value="{{ $endereco->estado ?? old('estado') }}" id="estado" name="estado" class="form-control m-1" type="text">
 
+                <label class="form-label" for="perfil">Endereço principal ?</label>
+                <select class="custom-select" name="principal" id="principal">
+                    <option>-- Selecione --</option>
+                    @switch($endereco->principal)
+                        @case(1)
+                            <option value="0">Não</option>
+                            <option value="1" selected>Sim</option>
+                            @break
+                        @default
+                            <option value="0" selected>Não</option>
+                            <option value="1">Sim</option>
+                    @endswitch
+                </select>
+
                 <button class="btn btn-primary mt-3" type="submit">Salvar</button>
 
         </form>

@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 use App\Endereco;
-use App\Http\Middleware\PermissaoAdmin;
-use App\Repositories\EnderecoRepositories;
 use App\Repositories\EnderecoRepository;
 use Illuminate\Http\Request;
 
@@ -17,11 +15,7 @@ class ClienteController extends Controller
     {
         $this->model = new Cliente();
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $clientes = Cliente::with(['enderecos'])->get();
@@ -29,25 +23,14 @@ class ClienteController extends Controller
         return view('app.clientes.index', ['clientes' => $clientes]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('app.clientes.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        // dd($request->all());
         $request->validate($this->model->rules(),$this->model->params());
 
         $cliente = Cliente::create($request->all());
@@ -67,36 +50,20 @@ class ClienteController extends Controller
         return redirect()->route('clientes.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Cliente  $cliente
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Cliente $cliente)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Cliente  $cliente
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         $cliente = Cliente::findOrFail($id);
         return view('app.clientes.edit', ['cliente' => $cliente]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Cliente  $cliente
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         $cliente = Cliente::findOrFail($id);
@@ -109,12 +76,7 @@ class ClienteController extends Controller
         return redirect()->route('clientes.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Cliente  $cliente
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         $cliente = Cliente::findOrFail($id);
