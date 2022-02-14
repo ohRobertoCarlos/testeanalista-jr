@@ -17,7 +17,7 @@ class Cliente extends Model
     {
         return [
             'nome_empresa' => 'required|min:2',
-            'cnpj' => 'required|min:14|max:14',
+            'cnpj' => 'required|integer|min:14|max:14',
             'telefone' => 'required',
             'email' => 'required|email',
             'nome_responsavel' => 'required',
@@ -30,6 +30,7 @@ class Cliente extends Model
             'nome_empresa.min' => 'O :attribute tem que ter no mínimo 2 caracteres',
             'cnpj.max' => 'Forneça um CNPJ válido',
             'cnpj.min' => 'Forneça um CNPJ válido',
+            'cnpj.integer' => 'O CNPJ Contém apenas números',
             'email.email' => 'Forneça um e-mail válido',
             'required' => 'O campo :attribute é requerido',
         ];

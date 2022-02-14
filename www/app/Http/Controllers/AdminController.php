@@ -41,12 +41,17 @@ class AdminController extends Controller
             'perfil.integer' => 'selecione um perfil para o usuário',
         ]);
 
-        User::create($request->all());
+        User::create([
+            'name' => $request->name,
+            'password' => Hash::make($request->password),
+            'email' => $request->email,
+            'perfil' => $request->perfil
+        ]);
 
         return redirect()->route('admin');
     }
 
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
         $user = User::find($id);
         $perfis = Perfil::PERFIS;
